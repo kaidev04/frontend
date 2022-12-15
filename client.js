@@ -14,7 +14,7 @@ const dataContainer = document.getElementById('data-container');
 
 var getData = true;
 
-const socket = io('marketscrape-backend-production.up.railway.app');
+const socket = io('http://localhost:8080');
 
 socket.on('connect', () => {
     console.log("You connected to server");
