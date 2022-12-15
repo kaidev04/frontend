@@ -41,8 +41,16 @@ nav {
     color: var(--clr-text-highlight);
 }
 
-#nav-container ul a {
+#nav-container ul {
+    list-style-type: none;
+}
+
+#nav-container ul li {
+    display: inline;
     margin: 0 0.5rem;
+}
+
+#nav-container ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.1rem;
