@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     background: var(--clr-body);
     color: white;
@@ -39,6 +43,9 @@ nav {
 
 #nav-container ul a {
     margin: 0 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
 }
 
 header {
@@ -296,7 +303,7 @@ header {
     box-shadow: 0 0 45px #0c0c0e;
 }
 
-.about-section {
+#about-section {
     background: var(--clr-header-bg);
     color: white;
     padding: 1.5rem 0;
