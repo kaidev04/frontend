@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MarketScrape</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/80a8051d6a.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js" integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="client.js" defer></script>
+    </head>
+
+    <body>
+        <nav>
+            <div id="nav-container">
+                <h4>Market<span class="text-highlight">Scrape</span></h4>
+                <div class="nav-text">
+                    <a>Home</a>
+                    <a>About</a>
+                </div>
+            </div>
+        </nav>
+        <header>
+            <div id="header-container">
+                <div id="header-left">
+                    <h1>Market<span>Scrape</span></h1>
+                    <p>Get unlimited stock sentiment data analysis from Twitter. Data analysis using charts, graphs and sentiment meter, all free of charge. Get started by using the search bar!</p>
+                    <div class="search-bar-container">
+                        <form class="search-bar" name="searchInput">
+                            <input class="search-bar-input" type="text" placeholder="Search.." aria-label="search">
+                            <button type="submit" class="search-bar-submit" aria-label="submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <div class="results-container">
+                                <ul class="results-list">
+                                    <li class="result-item"></li>   
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="header-right">
+                    <img src="https://kriptomat.io/wp-content/uploads/2021/12/blockchain.png" alt="blockchain illustration">
+                </div>
+            </div>
+        </header>
+        <section class="data-section">
+            <p id="data-placeholder-text">Data goes here!</p>
+            <div class="loader"></div>
+            <div id="data-container">
+                <div id="sentiment-label"></div>
+                <div class="sentiment-container">
+                    <p>Bad</p>
+                    <div class="sentiment-meter">
+                        <div id="meter-indicator">
+                            <span id="score-text"></span>
+                        </div>
+                    </div>
+                    <p>Good</p>
+                </div>
+
+                <div id="charts-container">
+                    <div id="pie-chart-container">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                    <div id="line-chart-container">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            <div id="about-container">
+                <div id="about-text">
+                    <h1>About <span class="text-highlight">Project</span></h1>
+                    <p>MarketScrape is a data analysis tool used to analyze sentiment of a chosen stock given in the search bar. Sentiment is measured from Twitter tweets with aforementioned stock name or stock ticker in the tweet's text data. Read more about the project <a href="">here.</a></p>
+                </div>
+                <div id="technologies">
+                    <h2>Technologies</h2>
+                    <ul>
+                        <li>- Chart.js</li>
+                        <li>- sentiment (npm)</li>
+                        <li>- SNScrape</li>
+                        <li>- Socket.io</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
