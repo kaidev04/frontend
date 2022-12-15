@@ -19,47 +19,47 @@
         <nav>
             <div id="nav-container">
                 <h4>Market<span class="text-highlight">Scrape</span></h4>
-                <div class="nav-text">
+                <ul class="nav-text">
                     <a>Home</a>
                     <a>About</a>
-                </div>
+                </ul>
             </div>
         </nav>
+
         <header>
             <div id="header-container">
                 <div id="header-left">
                     <h1>Market<span>Scrape</span></h1>
                     <p>Get unlimited stock sentiment data analysis from Twitter. Data analysis using charts, graphs and sentiment meter, all free of charge. Get started by using the search bar!</p>
-                    <div class="search-bar-container">
-                        <form class="search-bar" name="searchInput">
-                            <input class="search-bar-input" type="text" placeholder="Search.." aria-label="search">
-                            <button type="submit" class="search-bar-submit" aria-label="submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <div class="results-container">
-                                <ul class="results-list">
-                                    <li class="result-item"></li>   
-                                </ul>
-                            </div>
-                        </form>
-                    </div>
+                    <form class="search-bar" name="searchInput">
+                        <input class="search-bar-input" type="text" placeholder="Search.." aria-label="search">
+                        <button type="submit" class="search-bar-submit" aria-label="submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="results-container">
+                            <ul class="results-list">
+                                <li class="result-item"></li>   
+                            </ul>
+                        </div>
+                    </form>
                 </div>
                 <div id="header-right">
                     <img src="https://kriptomat.io/wp-content/uploads/2021/12/blockchain.png" alt="blockchain illustration">
                 </div>
             </div>
         </header>
+
         <section class="data-section">
             <p id="data-placeholder-text">Data goes here!</p>
             <div class="loader"></div>
             <div id="data-container">
                 <div id="sentiment-label"></div>
                 <div class="sentiment-container">
-                    <p>Bad</p>
+                    <img id="negative-emoticon" src="img/negative-emoticon.png" alt="red-sad-face"></img>
                     <div class="sentiment-meter">
                         <div id="meter-indicator">
                             <span id="score-text"></span>
                         </div>
                     </div>
-                    <p>Good</p>
+                    <img id="positive-emoticon" src="img/positive-emoticon.png" alt="green-happy-face"></img>
                 </div>
 
                 <div id="charts-container">
@@ -72,21 +72,13 @@
                 </div>
             </div>
         </section>
+
         <section class="about-section">
-            <div id="about-container">
-                <div id="about-text">
-                    <h1>About <span class="text-highlight">Project</span></h1>
-                    <p>MarketScrape is a data analysis tool used to analyze sentiment of a chosen stock given in the search bar. Sentiment is measured from Twitter tweets with aforementioned stock name or stock ticker in the tweet's text data. Read more about the project <a href="">here.</a></p>
-                </div>
-                <div id="technologies">
-                    <h2>Technologies</h2>
-                    <ul>
-                        <li>- Chart.js</li>
-                        <li>- sentiment (npm)</li>
-                        <li>- SNScrape</li>
-                        <li>- Socket.io</li>
-                    </ul>
-                </div>
+            <div id="about-heading-container">
+                <h2>About <span class="text-highlight">Project</span></h2>
+            </div>
+            <div id="about-text-container">
+                <p>MarketScrape is a data analysis tool used to analyze sentiment of a chosen stock given in the search bar. Sentiment is measured from Twitter tweets with aforementioned stock name or stock ticker in the tweet's text data.</p>
             </div>
         </section>
 
