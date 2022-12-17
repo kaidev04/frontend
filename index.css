@@ -182,6 +182,7 @@ header {
     color: #b5a0f6;
 }
 
+/* Taken from internet */
 .loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #b5a0f6;
@@ -286,7 +287,6 @@ header {
     width: 20rem;
     max-width: 24rem;
     min-width: 3rem;
-    aspect-ratio: 1 / 1;
 
     background: var(--clr-header-bg);
     border-radius: 2rem;

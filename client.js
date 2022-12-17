@@ -39,6 +39,8 @@ socket.on('return-data', data => {
     let sentiment = data['sentiment'];
 
     // Sentiment meter
+    // Calculate score difference from bottom value to actual value
+    // Convert to percent for css styling
     var distance = (score + 5)/10 * 100;
     meterIndicator.style.left = `${distance}%`;
     scoreText.innerHTML = score.toFixed(2);
@@ -61,8 +63,9 @@ socket.on('return-data', data => {
     sentimentLabel.innerHTML = sentiment;
 
     // Pie chart
-    document.getElementById("pie-chart-container").innerHTML = '&nbsp;';
+    //Remove previous chart to make room for new chart
     document.getElementById("pie-chart-container").innerHTML = '<canvas id="pie-chart"></canvas>';
+
     const pieChart = document.getElementById('pie-chart').getContext('2d');
     const piechartObject = new Chart(pieChart, {
         type: 'pie',
@@ -82,10 +85,11 @@ socket.on('return-data', data => {
 
     // Line chart
     const lineChartContainer = document.getElementById("line-chart-container");
-    lineChartContainer.innerHTML = '&nbsp;';
-    lineChartContainer.innerHTML = '<canvas id="line-chart"></canvas>';
-    const lineChart = document.getElementById('line-chart').getContext('2d');
 
+    //Remove previous chart to make room for new chart
+    lineChartContainer.innerHTML = '<canvas id="line-chart"></canvas>';
+
+    const lineChart = document.getElementById('line-chart').getContext('2d');
     let lineChartGradient = lineChart.createLinearGradient(0, 0, 0, lineChartContainer.offsetHeight);
     lineChartGradient.addColorStop(0, "rgba(140, 103, 255, 1)");
     lineChartGradient.addColorStop(1, "rgba(27, 27, 31, 0.5)")
@@ -118,6 +122,8 @@ socket.on('return-data', data => {
 
 let tickerSymbols = [];
 
+// Taken from internet
+// Get ticker symbol from csv file and append to array
 Papa.parse('nasdaq_screener_1670971439167.csv', {
     download: true,
     header: true,
@@ -129,6 +135,8 @@ Papa.parse('nasdaq_screener_1670971439167.csv', {
     }
 })
 
+// Taken from internet
+// Matches key events with ticker symbols from array
 searchInput.addEventListener('keyup', (e) => {
     let results = [];
     let input = searchInput.value;
